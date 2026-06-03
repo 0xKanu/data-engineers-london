@@ -1,17 +1,20 @@
 ---
-
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import GetInvolved from "../components/GetInvolved.astro";
+import Sponsorship from "../components/Sponsorship.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Data Engineers London — London's Community for Data Engineers">
+  <Header />
+  <main class="flex-grow">
+    <Hero />
+    <About />
+    <GetInvolved />
+    <Sponsorship />
+  </main>
+  <Footer />
+</Base>

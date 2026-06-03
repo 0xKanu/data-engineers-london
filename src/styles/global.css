@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+  --color-navy: #282A73;
+  --color-green: #4CBD94;
+  --color-green-light: #6BD3AE;
+  --color-green-dark: #3B9F7A;
+  --color-orange: #F37046;
+  --color-orange-light: #F78D6A;
+  --color-orange-dark: #D65A33;
+  --font-family-sans: "Outfit", sans-serif;
+}
+
+@utility bg-grid-pattern {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtNGgtMnY0aC00djJoNHY0aDJ2LTRoNHYtMmgtNHptMC0zMFYwaC0ydjRoLTR2Mmg0djRoMnYtNGg0VjJoLTR6bS0zMCAzMFYzMGgtMnY0SDB2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjYwaC0ydjRIMHYyaDR2NGgydi00aDRWMzJoLTR6IiBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtNGgtMnY0aC00djJoNHY0aDJ2LTRoNHYtMmgtNHptMC0zMFYwaC0ydjRoLTR2Mmg0djRoMnYtNGg0VjJoLTR6bS0zMCAzMFYzMGgtMnY0SDB2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjYwaC0ydjRIMHYyaDR2NGgydi00aDRWMzJoLTR6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+');
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

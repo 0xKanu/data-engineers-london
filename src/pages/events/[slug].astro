@@ -29,7 +29,7 @@ function formatDate(date: Date) {
 
 <Base title={`${event.data.title} — Data Engineers London`} description={event.data.description}>
   <Header />
-  <main class="flex-grow">
+  <main id="main-content" class="flex-grow">
 
     <section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-grid-pattern">
       <div class="absolute inset-0 bg-gradient-to-b from-navy/50 to-navy z-0"></div>
@@ -38,7 +38,7 @@ function formatDate(date: Date) {
           <span class="material-symbols-outlined mr-1 group-hover:-translate-x-1 transition-transform">arrow_back</span>
           All Events
         </a>
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-6">
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
           {event.data.title}
         </h1>
         <div class="flex flex-wrap items-center gap-4 text-sm md:text-base">
@@ -46,8 +46,8 @@ function formatDate(date: Date) {
             <span class="material-symbols-outlined">calendar_month</span>
             {formatDate(event.data.date)}
           </span>
-          <span class="text-white/30">|</span>
-          <span class="inline-flex items-center gap-1.5 text-white/70">
+          <span class="text-text-muted">|</span>
+          <span class="inline-flex items-center gap-1.5 text-text-secondary">
             <span class="material-symbols-outlined">location_on</span>
             {event.data.venue}
           </span>
@@ -57,9 +57,6 @@ function formatDate(date: Date) {
 
     <section class="py-16 bg-navy/95 border-t border-white/5">
       <div class="max-w-3xl mx-auto px-6">
-        <p class="text-white/70 font-light text-lg leading-relaxed mb-10">
-          {event.data.description}
-        </p>
 
         {
           event.data.speakers.length > 0 && (
@@ -79,10 +76,10 @@ function formatDate(date: Date) {
 
         <div class="prose prose-invert prose-lg max-w-none
           prose-headings:text-white prose-headings:font-display
-          prose-p:text-white/80 prose-p:font-light
-          prose-table:text-white/80
+          prose-p:text-text-body prose-p:font-light
+          prose-table:text-text-body
           prose-th:text-white prose-th:font-medium
-          prose-td:text-white/70 prose-td:font-light
+          prose-td:text-text-secondary prose-td:font-light
           prose-tr:border-white/10
           prose-strong:text-white
           prose-a:text-green hover:prose-a:text-green-light">

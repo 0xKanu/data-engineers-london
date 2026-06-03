@@ -1,28 +1,28 @@
-<nav class="sticky top-0 w-full z-50 bg-navy border-b border-white/10 shadow-xl font-sans font-medium antialiased transition-all duration-300 ease-in-out">
+<nav aria-label="Main navigation" class="sticky top-0 w-full z-50 bg-navy border-b border-white/10 shadow-xl font-sans font-medium antialiased transition-all duration-300 ease-in-out">
   <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
     <a class="flex items-center gap-3 group" href="/">
-      <img src="/logo-mark-colour.svg" alt="Data Engineers London" class="h-8 w-auto" />
+      <img src="/logo-mark-colour.svg" alt="Data Engineers London" class="h-10 w-auto" />
       <span class="text-2xl font-bold text-white tracking-tight text-nowrap">Data Engineers London</span>
     </a>
-    <div class="hidden md:flex items-center gap-8">
+    <div class="hidden md:flex items-center gap-8" role="navigation" aria-label="Page sections">
       <a class="text-green border-b-2 border-green pb-1 hover:text-green hover:opacity-90 transition-colors" href="/">Home</a>
       <a class="text-white hover:text-green transition-colors pb-1 border-b-2 border-transparent" href="/events">Events</a>
       <a class="text-white hover:text-green transition-colors pb-1 border-b-2 border-transparent" href="/about">About</a>
       <a class="text-white hover:text-green transition-colors pb-1 border-b-2 border-transparent" href="/#sponsorship">Sponsorship</a>
     </div>
-    <a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-green text-navy font-semibold hover:bg-green-light transition-colors hover:shadow-[0_0_15px_rgba(76,189,148,0.5)]" href="https://www.meetup.com/data-engineers-london/" rel="noopener noreferrer" target="_blank">
+    <a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-green text-navy font-bold hover:bg-green-light transition-colors hover:shadow-[0_0_15px_rgba(76,189,148,0.5)]" href="https://www.meetup.com/data-engineers-london/" rel="noopener noreferrer" target="_blank">
       Join Meetup
     </a>
     <details class="mobile-menu md:hidden">
-      <summary class="text-white cursor-pointer">
+      <summary class="text-white cursor-pointer" aria-label="Toggle navigation menu">
         <span class="material-symbols-outlined text-3xl">menu</span>
       </summary>
-      <div class="absolute top-full left-0 w-full bg-navy border-t border-white/10 px-6 py-6 space-y-4 shadow-xl">
-        <a href="/" class="block text-green font-medium text-lg">Home</a>
-        <a href="/events" class="block text-white hover:text-green transition-colors text-lg">Events</a>
-        <a href="/about" class="block text-white hover:text-green transition-colors text-lg">About</a>
-        <a href="/#sponsorship" class="block text-white hover:text-green transition-colors text-lg">Sponsorship</a>
-        <a href="https://www.meetup.com/data-engineers-london/" class="block w-full text-center px-6 py-3 rounded-full bg-green text-navy font-semibold hover:bg-green-light transition-colors mt-4" rel="noopener noreferrer" target="_blank">
+      <div class="absolute top-full left-0 w-full bg-navy border-t border-white/10 px-6 py-6 space-y-4 shadow-xl z-40" role="menu">
+        <a href="/" class="block text-green font-medium text-lg" role="menuitem">Home</a>
+        <a href="/events" class="block text-white hover:text-green transition-colors text-lg" role="menuitem">Events</a>
+        <a href="/about" class="block text-white hover:text-green transition-colors text-lg" role="menuitem">About</a>
+        <a href="/#sponsorship" class="block text-white hover:text-green transition-colors text-lg" role="menuitem">Sponsorship</a>
+        <a href="https://www.meetup.com/data-engineers-london/" class="block w-full text-center px-6 py-3 rounded-full bg-green text-navy font-bold hover:bg-green-light transition-colors mt-4" rel="noopener noreferrer" target="_blank" role="menuitem">
           Join Meetup
         </a>
       </div>
@@ -43,3 +43,15 @@
     display: none;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menu = document.querySelector('.mobile-menu');
+    if (!menu) return;
+    menu.querySelectorAll('a[role="menuitem"]').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.removeAttribute('open');
+      });
+    });
+  });
+</script>

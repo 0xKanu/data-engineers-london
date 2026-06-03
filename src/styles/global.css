@@ -1,22 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@font-face {
-  font-family: "Sk-Modernist";
-  src: url("/fonts/Sk-Modernist-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Sk-Modernist";
-  src: url("/fonts/Sk-Modernist-Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 @theme {
   --color-navy: #282A73;
   --color-green: #4CBD94;
@@ -26,7 +10,6 @@
   --color-orange-light: #F78D6A;
   --color-orange-dark: #D65A33;
   --font-family-sans: "Outfit", sans-serif;
-  --font-family-display: "Sk-Modernist", "Outfit", sans-serif;
 }
 
 @utility bg-grid-pattern {
@@ -38,11 +21,5 @@
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
-  }
-}
-
-@layer base {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-display);
   }
 }

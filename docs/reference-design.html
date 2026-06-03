@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data Engineers London</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        navy: "#282A73",
+                        green: {
+                            DEFAULT: "#4CBD94",
+                            light: "#6BD3AE",
+                            dark: "#3B9F7A"
+                        },
+                        orange: {
+                            DEFAULT: "#F37046",
+                            light: "#F78D6A",
+                            dark: "#D65A33"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        headline: ['Outfit', 'sans-serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        label: ['Outfit', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtNGgtMnY0aC00djJoNHY0aDJ2LTRoNHYtMmgtNHptMC0zMFYwaC0ydjRoLTR2Mmg0djRoMnYtNGg0VjJoLTR6bS0zMCAzMFYzMGgtMnY0SDB2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjYwaC0ydjRIMHYyaDR2NGgydi00aDRWMzJoLTR6IiBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtNGgtMnY0aC00djJoNHY0aDJ2LTRoNHYtMmgtNHptMC0zMFYwaC0ydjRoLTR2Mmg0djRoMnYtNGg0VjJoLTR6bS0zMCAzMFYzMGgtMnY0SDB2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjYwaC0ydjRIMHYyaDR2NGgydi00aDRWMzJoLTR6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #282A73;
+            color: #FFFFFF;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for horizontal gallery if needed */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased bg-navy min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-[#282A73] border-b border-white/10 shadow-xl font-['Outfit'] font-medium antialiased transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group" href="#home">
+<div class="relative w-8 h-8 flex items-center justify-center">
+<div class="absolute w-5 h-5 rounded-full border-2 border-green opacity-80 mix-blend-screen -ml-3 -mt-2 group-hover:scale-110 transition-transform"></div>
+<div class="absolute w-5 h-5 rounded-full border-2 border-green opacity-80 mix-blend-screen mt-3 group-hover:scale-110 transition-transform"></div>
+<div class="absolute w-5 h-5 rounded-full border-2 border-green opacity-80 mix-blend-screen ml-3 -mt-2 group-hover:scale-110 transition-transform"></div>
+</div>
+<span class="text-2xl font-bold text-white tracking-tight text-nowrap">Data Engineers London</span>
+</a>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#4CBD94] border-b-2 border-[#4CBD94] pb-1 hover:text-[#4CBD94] hover:opacity-90 transition-colors" href="#home">Home</a>
+<a class="text-white hover:text-[#4CBD94] transition-colors pb-1 border-b-2 border-transparent" href="#about">About</a>
+<a class="text-white hover:text-[#4CBD94] transition-colors pb-1 border-b-2 border-transparent" href="#gallery">Gallery</a>
+<a class="text-white hover:text-[#4CBD94] transition-colors pb-1 border-b-2 border-transparent" href="#participation">Participation</a>
+<a class="text-white hover:text-[#4CBD94] transition-colors pb-1 border-b-2 border-transparent" href="#sponsorship">Sponsorship</a>
+</div>
+<!-- Trailing Action -->
+<a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#4CBD94] text-navy font-semibold hover:bg-green-light transition-colors hover:shadow-[0_0_15px_rgba(76,189,148,0.5)]" href="https://www.meetup.com/data-engineers-london/" rel="noopener noreferrer" target="_blank">
+            Join Meetup
+        </a>
+<!-- Mobile Menu Button (Visual Only for this demo) -->
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- SECTION 1 — HOME -->
+<section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-grid-pattern min-h-[921px] flex items-center" id="home">
+<div class="absolute inset-0 bg-gradient-to-b from-navy/50 to-navy z-0"></div>
+<!-- Abstract decorative elements -->
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-green rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
+<div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+<div class="flex justify-center mb-8">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<div class="absolute w-14 h-14 rounded-full border-4 border-green opacity-90 mix-blend-screen -ml-8 -mt-6"></div>
+<div class="absolute w-14 h-14 rounded-full border-4 border-green opacity-90 mix-blend-screen mt-8"></div>
+<div class="absolute w-14 h-14 rounded-full border-4 border-green opacity-90 mix-blend-screen ml-8 -mt-6"></div>
+</div>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                London's Community for <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-green to-green-light">Data Engineers</span>
+</h1>
+<p class="text-xl md:text-2xl text-white/80 font-light mb-12 max-w-2xl mx-auto">
+                Monthly meetups, talks, networking &amp; more
+            </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+<a class="group flex items-center justify-center px-8 py-4 rounded-full bg-green text-navy font-bold text-lg hover:bg-green-light transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(76,189,148,0.4)]" href="https://www.meetup.com/data-engineers-london/" rel="noopener noreferrer" target="_blank">
+                    Join us on Meetup 
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 2 — ABOUT -->
+<section class="py-24 bg-navy/95 border-t border-white/5 relative z-10" id="about">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-white inline-block relative">
+                    About Us
+                    <div class="absolute -bottom-3 left-0 w-1/2 h-1 bg-green rounded-full"></div>
+</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+<div class="space-y-6 text-white/80 text-lg font-light leading-relaxed">
+<p>
+                        Data Engineers London is a community-driven group dedicated to bringing together data professionals, engineers, architects, and enthusiasts across the capital. We provide a space to share knowledge, discuss best practices, and explore the latest technologies shaping the modern data stack.
+                    </p>
+<p>
+                        Whether you're building massive data pipelines, architecting real-time streaming platforms, or just starting your journey in data engineering, you'll find a welcoming community ready to learn and grow together.
+                    </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Stat Card 1 -->
+<div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group backdrop-blur-sm sm:col-span-2">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-xl bg-green/10 flex items-center justify-center text-green group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<h3 class="text-3xl font-bold text-white">1,000+</h3>
+</div>
+<p class="text-white/60 font-medium">Active Members</p>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group backdrop-blur-sm">
+<div class="w-12 h-12 rounded-xl bg-orange/10 flex items-center justify-center text-orange mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">event</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-1">50+</h3>
+<p class="text-white/60 text-sm font-medium">Events Hosted</p>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group backdrop-blur-sm">
+<div class="w-12 h-12 rounded-xl bg-green/10 flex items-center justify-center text-green mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-1">Monthly</h3>
+<p class="text-white/60 text-sm font-medium">Meetups</p>
+</div>
+</div>
+</div>
+<!-- Meet the Organizers -->
+<div>
+<div class="mb-12">
+<h3 class="text-2xl md:text-3xl font-bold text-white inline-block relative">
+                        Meet the Organizers
+                        <div class="absolute -bottom-2 left-0 w-1/2 h-1 bg-green rounded-full"></div>
+</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Organizer 1 -->
+<div class="bg-navy border border-green/30 rounded-2xl p-8 flex flex-col items-center text-center">
+<img alt="Alex Carter" class="w-24 h-24 rounded-full mb-6 object-cover border-2 border-green/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgKbaJs6Zgz1F6xIKl-BzPnzjTYI3v05ncAhiWNLjGha099dHWSHNz9AuKnGYuU_Tt7PlsgmFN8NmZP_JOOGwzgKj-SDkCLDKqNXQl4mn2OZSfAyhXWRal6CIZqNdgtJ26URKQwudQB9rJL79NWPynal8An0mhzrE-hFcyIpEKjxtIuzWMBeTcv3zNJzOwa-myGB6bieziM3YO-hRBz9iQ9JoCJPvxtcjGdn4ShwN2qDzcuwNtSH1S6LU_GApVQoQ7zoGxbWkPwnDO"/>
+<h4 class="text-xl font-bold text-white mb-1">Alex Carter</h4>
+<p class="text-green font-medium mb-4">Lead Organiser</p>
+<p class="text-white/80 font-light text-sm mb-6 flex-grow">
+                            Alex is a senior data engineer with 10+ years building large-scale data pipelines at leading London tech firms. He founded Data Engineers London to create a space for practitioners to connect and share real-world knowledge.
+                        </p>
+<a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green/10 text-green hover:bg-green hover:text-navy transition-colors mt-auto" href="#" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+</svg>
+</a>
+</div>
+<!-- Organizer 2 -->
+<div class="bg-navy border border-green/30 rounded-2xl p-8 flex flex-col items-center text-center">
+<img alt="Priya Sharma" class="w-24 h-24 rounded-full mb-6 object-cover border-2 border-green/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtJnORY3EROcj4hb9EAldDIV21kzbloE1VqGxcwk7mBg-4CEEYdPDQfcjT-Fe5CmbvDNld-4XiV2_Lo3cpnsFVRU_b-ghBM93oSTjMp2ugBbAARzyzBfhe2Ee2Pso4Ta6DjWlcnqYaeherBTeLorT0qQpi5mTBQRuDypuALJYffdPDjWh4hahPtj0jGDElyDqKZ73IT1sfJbQE2iaCX3H0yKN8sssPsYPzhGI4pKKP9asHCmTVVzXYbSfLOkJ91J7HHDPHPtB4WDQq"/>
+<h4 class="text-xl font-bold text-white mb-1">Priya Sharma</h4>
+<p class="text-green font-medium mb-4">Community Manager</p>
+<p class="text-white/80 font-light text-sm mb-6 flex-grow">
+                            Priya brings a background in data architecture and a passion for inclusive community building. She manages speaker outreach, event logistics, and keeps the community engaged between meetups.
+                        </p>
+<a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green/10 text-green hover:bg-green hover:text-navy transition-colors mt-auto" href="#" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+</svg>
+</a>
+</div>
+<!-- Organizer 3 -->
+<div class="bg-navy border border-green/30 rounded-2xl p-8 flex flex-col items-center text-center">
+<img alt="Tom Nguyen" class="w-24 h-24 rounded-full mb-6 object-cover border-2 border-green/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPZfQt2YK5Czyjh3hjclTtcERTwwCZVatIw73_YiG94GOGTXdN40e05F9joAWI_GfgbYlCjDyJHXulKcaIxagfUoqAWoYP0kzYj0ESJblf1jQNu5VotlVpxmzSYpUOu_KDfri02wnzxovxu2NrUy30QlfVMFA7hT4qXcdgiLCgAEXh2GZkC-FblsucuXI7wYpycDZVAA58ivgkSm5IZtAJ5Op442K89gueHIxN-dfOH8Miei0teZfir0wZp_R8XKyOxy2s3GX990s8"/>
+<h4 class="text-xl font-bold text-white mb-1">Tom Nguyen</h4>
+<p class="text-green font-medium mb-4">Sponsorship Lead</p>
+<p class="text-white/80 font-light text-sm mb-6 flex-grow">
+                            Tom works as a data platform engineer and handles all sponsorship partnerships for the group. He is passionate about helping companies connect with London's data engineering talent.
+                        </p>
+<a class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green/10 text-green hover:bg-green hover:text-navy transition-colors mt-auto" href="#" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5 — GALLERY (Moved between Organizers and Get Involved) -->
+<section class="py-24 bg-navy relative border-t border-white/5" id="gallery">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-white inline-block relative">
+                    Gallery
+                    <div class="absolute -bottom-3 left-0 w-1/2 h-1 bg-green rounded-full"></div>
+</h2>
+</div>
+</div>
+<div class="w-full overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing">
+<div class="flex gap-4 px-6 md:px-12 pb-4 min-w-max">
+<!-- Gallery Image 1 -->
+<div class="w-[300px] md:w-[450px] aspect-[16/10] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group relative shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-green hover:shadow-2xl hover:shadow-green/20">
+<img alt="Data Engineers Collaboration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXmSEtRmHHFNSrDaVANM63-IzuiBdYzI08XEB7lpYh94jWGx9Jm-_r1McAAsgF0aR3M5rdq3YCZhBent27CNbsiex_yJgRShn-35D0anOJreANvMqVpZGGIV7e0t4mhqMei0fYATQjCAOAeB1Gfrjawqp_LTWOC87qbHeGvTDZF1YDrsNLz17ikT_QPMNhVfD_0Jji2AEJw8XbaVUxFZgOEtNZpzwDKsaHF5UwIIZtCHb8RgWNz_aeNaBHBAjNWlaT8VTfDjFIlUUk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white text-sm font-medium">Workshop Sessions</p>
+</div>
+</div>
+<!-- Gallery Image 2 -->
+<div class="w-[300px] md:w-[450px] aspect-[16/10] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group relative shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-green hover:shadow-2xl hover:shadow-green/20">
+<img alt="Modern Office Environment" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv_YWvIoqYMWOL1fBhonhNHUGNA2KvTp_wiTzFjmYnhF7P7iFrx0mZrACzxa_GI46ffOu-F1KtZI611KUU2pGyuM0r1Jz8qlJ8LpTCcDgba7FH5-lAt738_7DTioWThwxyhdVJWfGd4P_C6D1w3mGQ8kEfdpa3EC8Ct0eaWWt1kSUnz3xyg3UHV6nvKSVGtJJ-jx22VcFU37ouGjAKcvTvxC-j5E0Wp6vmMK7MIGoFt6q3mrbhEL1ITji70lYRS5fGTWomWH4CIRu8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white text-sm font-medium">Networking Evenings</p>
+</div>
+</div>
+<!-- Gallery Image 3 -->
+<div class="w-[300px] md:w-[450px] aspect-[16/10] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group relative shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-green hover:shadow-2xl hover:shadow-green/20">
+<img alt="Code on Screen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWFQ-WrYC1vM1SvIhNUvYNQlD_KGJ0Jdy73w24lnZEIZS_Zp0rzGSq4tPom4akJDJpD0UQ2tMNSIb_uiIeyuDpwDY2Ix9ikBPXNnI8w_hj2IeTK2Ta7-PGKbTu6LSOPB3uIMbDHJTnAZPfIoDDjAV_ZmrKNKAJNAAInPvl8p41vYf8zOdhg2MRiNQw6q725BQEvKg7MUu5UQCCuDh1GAMFr4QoWyQ5wZKk6Bl_L8RFiUEuhSJbu6-7VuEM4UJ-fhDYwWpfoQ-foaS_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white text-sm font-medium">Deep Tech Dives</p>
+</div>
+</div>
+<!-- Gallery Image 4 -->
+<div class="w-[300px] md:w-[450px] aspect-[16/10] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group relative shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-green hover:shadow-2xl hover:shadow-green/20">
+<img alt="Tech Meetup Crowd" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhDgPFe1R39IfkLf_cSfDEwT7g9EQmh4jSDKheB__6CrWvcUIk3-lup8FwbZEKJwZOEj89aVXUn4wVmkjFhIDvFC4sq58HnWsbQQsTW3_IP4gU6wgPefZ4B1JyM7gk7j_hqK8CLk6FaIFrLR8cNZvMdtS6zac7_E1gG9ORLad9fnzHtl3WC_KBfLky5B0S8Dl-KBy1JG_NFT_TG16snJC0JyJO81GNM5StKpvBqdg0vc_kmvhT9EPWJEuZM_t2tlAo8ITXZERQQomB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white text-sm font-medium">Community Gatherings</p>
+</div>
+</div>
+<!-- Gallery Image 5 -->
+<div class="w-[300px] md:w-[450px] aspect-[16/10] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group relative shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-green hover:shadow-2xl hover:shadow-green/20">
+<img alt="Collaboration at Work" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz4K6xFVtWCxgQW09UHq6ZkheXJVVhOq1kAB71MzE0DlRMcZ4W1AXAUdKcUjj0UjRCHG21bgym_Y9N1bMbjZ92I3Mbiozr4sM13AP5bKFlfdWAFK3ZfZNd9-BAxC3kE2_WVQ9EXqIvLQNBzGvVmvsj58xYogFZiZ7ang2t4vKegPWwIopYIPa3PJe_bCfanExqUFHynuActopOx2Opf-BqExo9-PWCs1A6E7csy3zbMEt7nr32pvafmHfP1QF_qc17Ya1hUdssFqpK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white text-sm font-medium">Panel Discussions</p>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-8 flex justify-center flex-col items-center">
+<p class="text-white/40 text-sm italic font-light">Scroll to view more moments from our events</p><div class="mt-10 flex justify-center">
+<a class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-green text-navy font-bold text-lg hover:bg-green-light transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(76,189,148,0.4)] group" href="#">
+        See More Moments
+        <span class="material-symbols-outlined ml-2 group-hover:rotate-12 transition-transform">photo_library</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 3 — PARTICIPATION -->
+<section class="py-24 bg-navy relative border-t border-white/5" id="participation">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div>
+<h2 class="text-3xl md:text-4xl font-bold text-white inline-block relative">
+                        Get Involved
+                        <div class="absolute -bottom-3 left-0 w-1/2 h-1 bg-orange rounded-full"></div>
+</h2>
+</div>
+<a class="inline-flex items-center text-green hover:text-green-light font-medium group transition-colors" href="https://www.meetup.com/data-engineers-london/events/" rel="noopener noreferrer" target="_blank">
+                    View Upcoming Events
+                    <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-navy border border-green/30 rounded-2xl p-8 hover:border-green transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-green/5 rounded-bl-full -mr-16 -mt-16 group-hover:bg-green/10 transition-colors"></div>
+<span class="material-symbols-outlined text-4xl text-green mb-6 block">event_available</span>
+<h3 class="text-xl font-bold text-white mb-4">Attend Events</h3>
+<p class="text-white/70 font-light leading-relaxed">Join us for deep technical dives, panel discussions, and casual networking evenings. Connect with peers and learn from industry leaders.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-navy border border-green/30 rounded-2xl p-8 hover:border-green transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-green/5 rounded-bl-full -mr-16 -mt-16 group-hover:bg-green/10 transition-colors"></div>
+<span class="material-symbols-outlined text-4xl text-green mb-6 block">mic</span>
+<h3 class="text-xl font-bold text-white mb-4">Give a Talk</h3>
+<p class="text-white/70 font-light leading-relaxed">Have a cool project, architecture win, or valuable lesson learned? We're always looking for speakers. First-time speakers welcome!</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-navy border border-green/30 rounded-2xl p-8 hover:border-green transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-green/5 rounded-bl-full -mr-16 -mt-16 group-hover:bg-green/10 transition-colors"></div>
+<span class="material-symbols-outlined text-4xl text-green mb-6 block">forum</span>
+<h3 class="text-xl font-bold text-white mb-4">Join the Community</h3>
+<p class="text-white/70 font-light leading-relaxed">Become part of our growing network on Slack and LinkedIn. Ask questions, share job opportunities, and stay connected between meetups.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4 — SPONSORSHIP -->
+<section class="py-24 bg-navy relative border-t border-white/5 overflow-hidden" id="sponsorship">
+<div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="mb-16 text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-white inline-block relative mb-6">
+                    Sponsor Us
+                    <div class="absolute -bottom-3 left-1/4 w-1/2 h-1 bg-green rounded-full"></div>
+</h2>
+<p class="text-white/70 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                    Support the data engineering community in London. Sponsoring our events is a great way to build brand awareness, recruit top talent, and give back to the ecosystem.
+                </p>
+</div>
+<div class="mt-16 flex flex-col items-center">
+<a class="group relative inline-flex items-center justify-center px-10 py-4 rounded-full bg-orange text-white font-bold text-lg hover:bg-orange-dark transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(243,112,70,0.4)]" href="mailto:sponsors@dataengineers.london">
+                    Get in Touch
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">mail</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-[#282A73] border-t border-white/10 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto gap-6">
+<div class="flex items-center gap-4">
+<div class="relative w-6 h-6 flex items-center justify-center grayscale opacity-70">
+<div class="absolute w-4 h-4 rounded-full border border-white -ml-2 -mt-1.5"></div>
+<div class="absolute w-4 h-4 rounded-full border border-white mt-2"></div>
+<div class="absolute w-4 h-4 rounded-full border border-white ml-2 -mt-1.5"></div>
+</div>
+<span class="text-lg font-bold text-white">Data Engineers London</span>
+</div>
+<div class="text-sm text-white/70 font-['Outfit'] text-center md:text-left">
+            © 2024 Data Engineers London. Building the pipeline together.
+        </div>
+<div class="flex flex-wrap justify-center gap-6 text-sm">
+<a class="text-white/60 hover:text-white transition-colors cursor-pointer" href="#">Code of Conduct</a>
+<a class="text-white/60 hover:text-white transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="text-white/60 hover:text-white transition-colors cursor-pointer" href="#">Contact Us</a>
+<a class="text-[#4CBD94] font-semibold hover:text-[#F37046] transition-colors flex items-center group" href="https://www.meetup.com/data-engineers-london/">
+                Meetup Group
+                <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

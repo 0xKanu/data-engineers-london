@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Base title="Privacy Policy — Data Engineers London" description="Privacy Policy for Data Engineers London community.">
+  <Header />
+  <main class="flex-grow">
+    <section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-grid-pattern">
+      <div class="absolute inset-0 bg-gradient-to-b from-navy/50 to-navy z-0"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
+          Privacy Policy
+        </h1>
+      </div>
+    </section>
+    <section class="py-24 bg-navy/95 border-t border-white/5">
+      <div class="max-w-3xl mx-auto px-6 space-y-6 text-white/80 text-lg font-light leading-relaxed">
+        <p>
+          Data Engineers London is a community group operated via Meetup.com. We do not collect or store any personal data directly.
+        </p>
+        <p>
+          When you RSVP to our events via Meetup.com, your personal data is handled according to Meetup's own privacy policy. We only receive the information that Meetup provides to event organisers.
+        </p>
+        <p>
+          If you contact us via email, we will only use your email address to respond to your inquiry and will not share it with third parties.
+        </p>
+        <p>
+          For any questions about this policy, please contact us at <a href="mailto:events@dataengineerslondon.com" class="text-green hover:text-green-light transition-colors">events@dataengineerslondon.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

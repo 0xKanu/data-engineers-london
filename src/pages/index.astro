@@ -2,16 +2,39 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import NextEvent from "../components/NextEvent.astro";
 import About from "../components/About.astro";
 import GetInvolved from "../components/GetInvolved.astro";
 import Sponsorship from "../components/Sponsorship.astro";
 import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const allEvents = await getCollection("events");
+const now = new Date();
+
+const upcoming = allEvents
+  .filter((e) => e.data.date > now && e.id !== "july-2026-meetup")
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+
+const nextEvent = upcoming[0];
 ---
 
 <Base title="Data Engineers London — London's Community for Data Engineers">
   <Header />
   <main class="flex-grow">
     <Hero />
+    {
+      nextEvent && (
+        <NextEvent
+          title={nextEvent.data.title}
+          date={nextEvent.data.date}
+          venue={nextEvent.data.venue}
+          description={nextEvent.data.description}
+          meetupLink={nextEvent.data.meetupLink}
+          eventId={nextEvent.id}
+        />
+      )
+    }
     <About />
     <GetInvolved />
     <Sponsorship />

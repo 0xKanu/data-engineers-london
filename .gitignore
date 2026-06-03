@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# branding source files (assets copied to public/ during build)
+Branding.zip
+Branding.zip:Zone.Identifier
+websitefordataengineerslondon/

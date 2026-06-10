@@ -27,7 +27,7 @@ function formatDate(date: Date) {
 }
 ---
 
-<Base title={`${event.data.title} — Data Engineers London`} description={event.data.description}>
+<Base title={`${event.data.title} — Data Engineers London`} description={event.data.description} keywords={`data engineering, ${event.data.speakers.join(", ")}, ${event.data.venue.split(",")[0]}`}>
   <Header />
   <main id="main-content" class="flex-grow">
 
@@ -38,7 +38,7 @@ function formatDate(date: Date) {
           <span class="material-symbols-outlined mr-1 group-hover:-translate-x-1 transition-transform">arrow_back</span>
           All Events
         </a>
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-6">
           {event.data.title}
         </h1>
         <div class="flex flex-wrap items-center gap-4 text-sm md:text-base">
@@ -46,14 +46,36 @@ function formatDate(date: Date) {
             <span class="material-symbols-outlined">calendar_month</span>
             {formatDate(event.data.date)}
           </span>
-          <span class="text-text-muted">|</span>
-          <span class="inline-flex items-center gap-1.5 text-text-secondary">
+          <span class="text-white/30">|</span>
+          <span class="inline-flex items-center gap-1.5 text-white/70">
             <span class="material-symbols-outlined">location_on</span>
             {event.data.venue}
           </span>
         </div>
       </div>
     </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": event.data.title,
+      "startDate": event.data.date.toISOString(),
+      "description": event.data.description,
+      "location": {
+        "@type": "Place",
+        "name": event.data.venue,
+        "address": event.data.venue
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Data Engineers London",
+        "url": "https://data-engineers-london.web.app"
+      },
+      "performer": event.data.speakers.map((name) => ({
+        "@type": "Person",
+        "name": name
+      }))
+    })} />
 
     <section class="py-16 bg-navy/95 border-t border-white/5">
       <div class="max-w-3xl mx-auto px-6">

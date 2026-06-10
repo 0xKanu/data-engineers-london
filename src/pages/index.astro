@@ -22,6 +22,7 @@ const nextEvent = upcoming[0];
   <Header />
   <main id="main-content" class="flex-grow">
     <Hero />
+    <About />
     {
       nextEvent ? (
         <NextEvent
@@ -49,7 +50,6 @@ const nextEvent = upcoming[0];
         </section>
       )
     }
-    <About />
     <GetInvolved />
     <section class="py-24 bg-navy/95 border-t border-white/5" id="sponsorship">
       <div class="max-w-7xl mx-auto px-6">
@@ -67,25 +67,29 @@ const nextEvent = upcoming[0];
       <div class="w-full overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing" role="region" aria-label="Past sponsors and partners" tabindex="0">
         <div class="flex gap-4 px-6 pb-4" role="list">
           {([
-            { name: "WeShape", role: "Venue", highlight: false },
-            { name: "Baringa", role: "Venue", highlight: false },
-            { name: "Zego", role: "Venue", highlight: false },
-            { name: "Wise", role: "Venue", highlight: false },
-            { name: "Trainline", role: "Venue", highlight: false },
-            { name: "Civo", role: "Venue", highlight: false },
-            { name: "The Information Lab", role: "Venue", highlight: false },
-            { name: "WBS", role: "Venue", highlight: false },
-            { name: "Kubrick Group", role: "Venue", highlight: false },
-            { name: "Snowflake", role: "Venue", highlight: false },
-            { name: "Census", role: "Sponsor", highlight: true },
-            { name: "Snowflake User Group", role: "Partner", highlight: false },
-            { name: "Confluent", role: "Partner", highlight: false },
-            { name: "Sahaj Software", role: "Partner", highlight: false },
-          ] as { name: string; role: string; highlight: boolean }[]).map(({ name, role, highlight }) => (
-            <div class={`min-w-[180px] bg-white/5 border rounded-2xl p-6 hover:border-white/20 transition-colors text-center backdrop-blur-sm shrink-0 ${highlight ? "border-green/30" : "border-white/10"}`} role="listitem">
-              <span class="text-white text-lg font-medium">{name}</span>
-              <p class={`text-xs mt-1 font-medium ${highlight ? "text-green" : "text-text-muted"}`}>{role}</p>
-            </div>
+            { name: "WeShape", domain: "weshape.com" },
+            { name: "Baringa", domain: "baringa.com" },
+            { name: "Zego", domain: "zego.com" },
+            { name: "Wise", domain: "wise.com" },
+            { name: "Trainline", domain: "thetrainline.com" },
+            { name: "Civo", domain: "civo.com" },
+            { name: "The Information Lab", domain: "theinformationlab.co.uk" },
+            { name: "Kubrick Group", domain: "kubrickgroup.com" },
+            { name: "Snowflake", domain: "snowflake.com" },
+            { name: "Census", domain: "getcensus.com" },
+            { name: "Confluent", domain: "confluent.io" },
+            { name: "Sahaj Software", domain: "sahajsoft.com" },
+          ] as { name: string; domain: string }[]).map(({ name, domain }) => (
+            <a href={`https://${domain}`} class="min-w-[200px] bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-green/50 hover:bg-white/10 transition-colors text-center backdrop-blur-sm shrink-0 group" rel="noopener noreferrer" target="_blank" role="listitem">
+              <img
+                src={`https://logo.clearbit.com/${domain}`}
+                alt={name}
+                class="h-8 mx-auto mb-3 object-contain"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
+              <span class="text-white text-sm font-medium group-hover:text-green transition-colors">{name}</span>
+            </a>
           ))}
         </div>
       </div>

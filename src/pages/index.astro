@@ -67,27 +67,28 @@ const nextEvent = upcoming[0];
       <div class="w-full overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing" role="region" aria-label="Past sponsors and partners" tabindex="0">
         <div class="flex gap-4 px-6 pb-4" role="list">
           {([
-            { name: "WeShape", domain: "weshape.com" },
-            { name: "Baringa", domain: "baringa.com" },
-            { name: "Zego", domain: "zego.com" },
-            { name: "Wise", domain: "wise.com" },
-            { name: "Trainline", domain: "thetrainline.com" },
-            { name: "Civo", domain: "civo.com" },
-            { name: "The Information Lab", domain: "theinformationlab.co.uk" },
-            { name: "Kubrick Group", domain: "kubrickgroup.com" },
             { name: "Snowflake", domain: "snowflake.com" },
-            { name: "Census", domain: "getcensus.com" },
             { name: "Confluent", domain: "confluent.io" },
+            { name: "Kubrick Group", domain: "kubrickgroup.com" },
             { name: "Sahaj Software", domain: "sahajsoft.com" },
+            { name: "The Information Lab", domain: "theinformationlab.co.uk" },
+            { name: "Census", domain: "getcensus.com" },
+            { name: "Civo", domain: "civo.com" },
+            { name: "Baringa", domain: "baringa.com" },
+            { name: "Trainline", domain: "thetrainline.com" },
+            { name: "Wise", domain: "wise.com" },
+            { name: "Zego", domain: "zego.com" },
           ] as { name: string; domain: string }[]).map(({ name, domain }) => (
-            <a href={`https://${domain}`} class="min-w-[200px] bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-green/50 hover:bg-white/10 transition-colors text-center backdrop-blur-sm shrink-0 group" rel="noopener noreferrer" target="_blank" role="listitem">
-              <img
-                src={`https://logo.clearbit.com/${domain}`}
-                alt={name}
-                class="h-8 mx-auto mb-3 object-contain"
-                loading="lazy"
-                onerror="this.style.display='none'"
-              />
+            <a href={`https://${domain}`} class="min-w-[180px] bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-green/50 hover:bg-white/10 transition-colors text-center backdrop-blur-sm shrink-0 group" rel="noopener noreferrer" target="_blank" role="listitem">
+              <div class="bg-white/10 rounded-lg p-3 mb-3 flex items-center justify-center h-14">
+                <img
+                  src={`https://logo.clearbit.com/${domain}`}
+                  alt={name}
+                  class="max-h-8 max-w-[120px] object-contain"
+                  loading="lazy"
+                  onerror="this.style.display='none'"
+                />
+              </div>
               <span class="text-white text-sm font-medium group-hover:text-green transition-colors">{name}</span>
             </a>
           ))}

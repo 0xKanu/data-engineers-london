@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -46,7 +48,6 @@ const canonical = canonicalURL ?? new URL(Astro.url.pathname, Astro.site ?? "htt
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
